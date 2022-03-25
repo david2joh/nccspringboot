@@ -1,0 +1,13 @@
+spring:
+   output:
+       ansi:
+          enabled: DETECT   
+   datasource:
+       url: jdbc:h2:mem:jeep
+       
+logging:
+    level:
+      root: ERROR
+      '[com.promineotech.jeep]': DEBUG
+        
+ 
