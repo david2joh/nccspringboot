@@ -20,6 +20,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlConfig;
+
+import com.promineotech.jeep.entity.JeepModel;
 import com.promineotech.jeep.entity.Order;
 import lombok.Getter;
 
@@ -62,7 +64,7 @@ class CreateOrderTest {
     assertThat(response.getBody()).isNotNull();
     Order order = response.getBody();
     assertThat(order.getCustomer().getCustomerId()).isEqualTo("STERN_TORO");
-    assertThat(order.getModel().getModelID()).isEqualTo("GRAND_CHEROKEE");
+    assertThat(order.getModel().getModelID()).isEqualTo(JeepModel.GRAND_CHEROKEE);
     assertThat(order.getModel().getTrimLevel()).isEqualTo("Summit");
     assertThat(order.getModel().getNumDoors()).isEqualTo(4);
     assertThat(order.getColor().getColorId()).isEqualTo("EXT_JETSET_BLUE");
